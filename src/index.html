@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Test Comp</title>
+    <p>Instruction:</p>
+    <ol>
+      <li>click "go" (with "banner" option checked)</li>
+      <li>click "go" (with "banner" option not checked)</li>
+    </ol>
+    <p>the first component should still have a banner, but hasn't</p>
+
+    <script type="module" src="build/test-comp.esm.js"></script>
+    <script nomodule src="build/test-comp.js"></script>
+
+    <script>
+      function refresh() {
+        let showBanner = document.querySelector("#showBanner")
+          .checked;
+        var comp = document.createElement("test-comp-ui");
+        comp.setAttribute("show-banner", showBanner);
+
+        document.body.appendChild(comp);
+      }
+    </script>
+    <style>
+      :root {
+        font-size: 10px;
+      }
+      body {
+        font-family: Calibri, sans-serif;
+        margin: 30px;
+        padding: 0;
+      }
+      p {
+        margin: 10px 0 0 0;
+        font-size: 12px;
+      }
+      test-comp {
+        display: block;
+        width: 250px;
+        height: 250px;
+      }
+      button {
+        margin-bottom: 15px;
+      }
+      input[type="text"] {
+        width: 250px;
+        display: block;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Test Comp Playground</h1>
+    <div class="choice">
+      <input
+        type="checkbox"
+        id="showBanner"
+        name="showBanner"
+        checked
+      />
+      Show Banner
+      <button onclick="refresh()">Create!</button>
+    </div>
+  </body>
+</html>

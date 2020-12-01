@@ -1,0 +1,37 @@
+{
+  "name": "@dnepro/stencil-store-error",
+  "private": true,
+  "version": "0.0.1",
+  "staticDeploymentFolder": "./build/",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.js",
+  "es2015": "./dist/esm/index.mjs",
+  "es2017": "./dist/esm/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "collection": "./dist/collection/collection-manifest.json",
+  "collection:main": "./dist/collection/index.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --es5",
+    "start": "stencil build --es5 --dev --watch --serve",
+    "test": "stencil test --spec",
+    "test.watch": "stencil test --spec --watchAll"
+  },
+  "dependencies": {
+    "@stencil/store": "^1.3.0"
+  },
+  "devDependencies": {
+    "@stencil/core": "2.2.0",
+    "@stencil/sass": "1.3.2",
+    "@types/jest": "26.0.15",
+    "@types/siema": "^1.4.3",
+    "jest": "26.6.0",
+    "jest-cli": "26.6.3",
+    "ts-jest": "26.4.4",
+    "workbox-build": "5.1.4"
+  },
+  "license": "MIT"
+}
